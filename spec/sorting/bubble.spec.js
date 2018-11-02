@@ -10,5 +10,11 @@ describe('Bubble Sort', () => {
         const unsortedArray = [2,1];
         const expectedSortedArray = [1,2];
         expect(BubbleSort(unsortedArray)).toEqual(expectedSortedArray);
-    })
+    });
+
+    it('returns sorted array when given partially unsorted array with three elements', () => {
+        const unsortedArray = [1,3,2];
+        const expectedSortedArray = [1,2,3];
+        expect(BubbleSort(unsortedArray)).toEqual(expectedSortedArray);
+    });
 });
