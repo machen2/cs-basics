@@ -9,4 +9,10 @@ describe('Merge Sort', () => {
         alreadySortedArray = [0,1];
         expect(MergeSort(alreadySortedArray)).toEqual([0,1]);
     });
+
+    it('returns sorted array when given unsorted array with two elements', () => {
+        const unsortedArray = [2,1];
+        const expectedSortedArray = [1,2];
+        expect(MergeSort(unsortedArray)).toEqual(expectedSortedArray);
+    });
 });
