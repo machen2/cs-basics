@@ -13,6 +13,7 @@ function mergeSort(array) {
 
     return array;
 }
+
 function merge(leftArray, rightArray, origArray) {
     let index = 0;
 
