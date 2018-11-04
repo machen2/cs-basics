@@ -5,7 +5,23 @@ function quickSort(array, leftIndex, rightIndex) {
     let origLeftIndex = leftIndex;
     let origRightIndex = rightIndex;
 
-    //------Divide elements in array to partition them
+    //Left index after partitioning becomes new pivot point
+    let pivotIndex = partition(array, origLeftIndex, origRightIndex);
+
+    //We know quicksort is over once the left and right indexes have reached the pivot index
+    //So we keep comparing until they reach the pivot index
+    if(origLeftIndex < pivotIndex - 1) {
+        quickSort(array, origLeftIndex, pivotIndex - 1);
+    }
+
+    if(pivotIndex < origRightIndex) {
+        quickSort(array, pivotIndex, origRightIndex);
+    }
+
+    return array;
+}
+
+function partition(array, leftIndex, rightIndex) {
     let pivotValue = array[Math.floor((leftIndex + rightIndex) / 2)];
 
     //When the left index is greater than the right index, sorting is finished!
@@ -34,21 +50,7 @@ function quickSort(array, leftIndex, rightIndex) {
         }
     }
 
-    //-----End partitioning
-    //Left index after partitioning becomes new pivot point
-    let pivotIndex = leftIndex;
-
-    //We know quicksort is over once the left and right indexes have reached the pivot index
-    //So we keep comparing until they reach the pivot index
-    if(origLeftIndex < pivotIndex - 1) {
-        quickSort(array, origLeftIndex, pivotIndex - 1);
-    }
-
-    if(pivotIndex < origRightIndex) {
-        quickSort(array, pivotIndex, origRightIndex);
-    }
-
-    return array;
+    return leftIndex;
 }
 
 module.exports = quickSort;
