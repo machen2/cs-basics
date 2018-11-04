@@ -5,6 +5,11 @@ describe('Quick Sort', () => {
         expect(QuickSort([1])).toEqual([1]);
     });
 
+    it('returns sorted array when given sorted two element array', () => {
+        let sortedArray = [1,2];
+        expect(QuickSort(sortedArray)).toEqual([1,2]);
+    });
+
     it('returns sorted array when given unsorted two element array', () => {
         let unsortedArray = [2,1];
         const expectedArray = [1,2];
