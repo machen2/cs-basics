@@ -15,4 +15,10 @@ describe('Merge Sort', () => {
         const expectedSortedArray = [1,2];
         expect(MergeSort(unsortedArray)).toEqual(expectedSortedArray);
     });
+
+    it('returns sorted array when given unsorted array with three elements', () => {
+        const unsortedArray = [3,2,1];
+        const expectedSortedArray = [1,2,3];
+        expect(MergeSort(unsortedArray)).toEqual(expectedSortedArray);
+    });
 });
