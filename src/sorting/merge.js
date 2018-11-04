@@ -3,31 +3,31 @@ function mergeSort(array) {
         return array;
 
     let midpoint = Math.floor(array.length/2);
-    let leftValue = array.slice(0, midpoint);
-    let rightValue = array.slice(midpoint);
+    let leftArray = array.slice(0, midpoint);
+    let rightArray = array.slice(midpoint);
 
-    mergeSort(leftValue);
-    mergeSort(rightValue);
+    mergeSort(leftArray);
+    mergeSort(rightArray);
 
     let index = 0;
 
-    while(leftValue.length && rightValue.length) {
-        if(leftValue[0] > rightValue[0]) {
-            array[index] = rightValue.shift();
+    while(leftArray.length && rightArray.length) {
+        if(leftArray[0] > rightArray[0]) {
+            array[index] = rightArray.shift();
             index += 1;
         } else {
-            array[index] = leftValue.shift();
+            array[index] = leftArray.shift();
             index += 1;
         }
     }
 
-    while(leftValue.length) {
-        array[index] = leftValue.shift();
+    while(leftArray.length) {
+        array[index] = leftArray.shift();
         index += 1;
     }
 
-    while(rightValue.length) {
-        array[index] = rightValue.shift();
+    while(rightArray.length) {
+        array[index] = rightArray.shift();
         index += 1;
     }
 
