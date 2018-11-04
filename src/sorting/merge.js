@@ -9,29 +9,32 @@ function mergeSort(array) {
     mergeSort(leftArray);
     mergeSort(rightArray);
 
+    merge(leftArray, rightArray, array);
+
+    return array;
+}
+function merge(leftArray, rightArray, origArray) {
     let index = 0;
 
     while(leftArray.length && rightArray.length) {
         if(leftArray[0] > rightArray[0]) {
-            array[index] = rightArray.shift();
+            origArray[index] = rightArray.shift();
             index += 1;
         } else {
-            array[index] = leftArray.shift();
+            origArray[index] = leftArray.shift();
             index += 1;
         }
     }
 
     while(leftArray.length) {
-        array[index] = leftArray.shift();
+        origArray[index] = leftArray.shift();
         index += 1;
     }
 
     while(rightArray.length) {
-        array[index] = rightArray.shift();
+        origArray[index] = rightArray.shift();
         index += 1;
     }
-
-    return array;
 }
 
 module.exports = mergeSort;
