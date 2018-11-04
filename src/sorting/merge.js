@@ -27,7 +27,7 @@ function mergeSort(array) {
     }
 
     while(rightValue.length) {
-        array[index] = leftValue.shift();
+        array[index] = rightValue.shift();
         index += 1;
     }
 
