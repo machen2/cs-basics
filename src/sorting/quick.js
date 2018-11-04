@@ -39,10 +39,7 @@ function partition(array, leftIndex, rightIndex) {
 
         //If the left is larger than the pivot and the right is smaller or equal to the pivot, we swap
         if(leftIndex <= rightIndex) {
-            //Swap values
-            let temp = array[leftIndex];
-            array[leftIndex] = array[rightIndex];
-            array[rightIndex] = temp;
+            swap(array, leftIndex, rightIndex);
 
             //Increment/decrement the indexes
             leftIndex += 1;
@@ -51,6 +48,12 @@ function partition(array, leftIndex, rightIndex) {
     }
 
     return leftIndex;
+}
+
+function swap(array, leftIndex, rightIndex) {
+    let temp = array[leftIndex];
+    array[leftIndex] = array[rightIndex];
+    array[rightIndex] = temp;
 }
 
 module.exports = quickSort;
