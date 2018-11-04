@@ -18,9 +18,11 @@ describe('Quick Sort', () => {
         expect(QuickSort(unsortedArray, leftIndex, rightIndex)).toEqual(expectedArray);
     });
 
-    // it('returns sorted array when given unsorted three element array', () => {
-    //     let unsortedArray = [2,3,1];
-    //     const expectedArray = [1,2,3];
-    //     expect(QuickSort(unsortedArray)).toEqual(expectedArray);
-    // });
+    it('returns sorted array when given unsorted three element array', () => {
+        const unsortedArray = [2,3,1];
+        const leftIndex = 0;
+        const rightIndex = 2;
+        const expectedArray = [1,2,3];
+        expect(QuickSort(unsortedArray, leftIndex, rightIndex)).toEqual(expectedArray);
+    });
 });
